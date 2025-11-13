@@ -1,0 +1,166 @@
+/* ---------- GERAL ---------- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6fb;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background: linear-gradient(90deg, #1e3a8a, #2563eb);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    padding: 30px 40px;
+}
+
+/* ---------- TÍTULOS ---------- */
+section h2 {
+    color: #1e3a8a;
+    border-left: 5px solid #2563eb;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    grid-column: 1 / -1;
+}
+
+/* ---------- FORMULÁRIOS ---------- */
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    column-gap: 15px;
+    row-gap: 12px;
+    margin-bottom: 30px;
+}
+
+section label {
+    text-align: right;
+    font-weight: 600;
+}
+
+section input,
+section select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    transition: border-color 0.2s ease;
+}
+
+section input:focus,
+section select:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+/* ---------- BOTÕES ---------- */
+section button {
+    grid-column: 1 / -1;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+section button:hover {
+    background-color: #1e40af;
+}
+
+/* ---------- TABELA ---------- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    margin-top: 15px;
+}
+
+thead {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+th {
+    padding: 12px 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 10px;
+    text-align: center;
+    background-color: #f8fafc;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+tbody tr:hover {
+    background-color: #e0f2fe;
+}
+
+/* ---------- BOTÕES DE AÇÃO ---------- */
+td button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+td button:hover {
+    background-color: #1e40af;
+}
+
+/* ---------- MENSAGEM ---------- */
+#mensagem {
+    display: none;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* ---------- SEÇÃO DE EDIÇÃO ---------- */
+#editarVeiculoSection {
+    border-top: 2px solid #2563eb;
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+/* ---------- RESPONSIVO ---------- */
+@media (max-width: 768px) {
+    section {
+        grid-template-columns: 1fr 1fr;
+    }
+    section label {
+        text-align: left;
+    }
+    table {
+        font-size: 14px;
+    }
+    td button {
+        padding: 5px 8px;
+    }
+}

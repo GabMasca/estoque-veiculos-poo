@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque de Veículos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>🚗 Sistema de Estoque de Veículos</h1>
+</header>
+
+<main>
+    <!-- MENSAGEM DE SUCESSO -->
+    <div id="mensagem"></div>
+
+    <!-- CADASTRAR MARCA -->
+    <section>
+        <h2>Cadastro de Marca</h2>
+        <input type="text" id="marcaNome" placeholder="Nome da marca">
+        <button onclick="cadastrarMarca()">Cadastrar Marca</button>
+    </section>
+
+    <!-- CADASTRAR VEÍCULO -->
+    <section>
+        <h2>Cadastro de Veículo</h2>
+
+        <label>Modelo:</label>
+        <input type="text" id="modelo" placeholder="Ex: Onix LT">
+
+        <label>Ano:</label>
+        <input type="number" id="ano" placeholder="Ex: 2024">
+
+        <label>Cor:</label>
+        <input type="text" id="cor" placeholder="Ex: Branco">
+
+        <label>Quilometragem:</label>
+        <input type="number" id="quilometragem" placeholder="Ex: 10000">
+
+        <label>Preço:</label>
+        <input type="number" id="preco" placeholder="Ex: 95000">
+
+        <label>Status:</label>
+        <select id="status">
+            <option value="Disponível">Disponível</option>
+            <option value="Vendido">Vendido</option>
+        </select>
+
+        <label>Marca:</label>
+        <select id="marcaSelect"></select>
+
+        <button onclick="cadastrarVeiculo()">Cadastrar Veículo</button>
+    </section>
+
+    <!-- FILTRO -->
+    <section>
+        <h2>Consultar Veículos</h2>
+        <label>Filtrar por Marca:</label>
+        <select id="filtroMarca" onchange="filtrarVeiculos()"></select>
+    </section>
+
+    <!-- LISTAGEM -->
+    <section>
+        <h2>Lista de Veículos</h2>
+        <table id="tabelaVeiculos">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Ano</th>
+                <th>Cor</th>
+                <th>Preço</th>
+                <th>Km</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- EDITAR VEÍCULO -->
+    <section id="editarVeiculoSection" style="display:none;">
+        <h2>Editar Veículo</h2>
+
+        <input type="hidden" id="editarId">
+
+        <label>Modelo:</label>
+        <input type="text" id="editarModelo">
+
+        <label>Ano:</label>
+        <input type="number" id="editarAno">
+
+        <label>Cor:</label>
+        <input type="text" id="editarCor">
+
+        <label>Quilometragem:</label>
+        <input type="number" id="editarQuilometragem">
+
+        <label>Preço:</label>
+        <input type="number" id="editarPreco">
+
+        <label>Status:</label>
+        <select id="editarStatus">
+            <option value="Disponível">Disponível</option>
+            <option value="Vendido">Vendido</option>
+        </select>
+
+        <label>Marca:</label>
+        <select id="editarMarcaSelect"></select>
+
+        <button onclick="salvarEdicao()">💾 Salvar Alterações</button>
+        <button onclick="cancelarEdicao()">❌ Cancelar</button>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
